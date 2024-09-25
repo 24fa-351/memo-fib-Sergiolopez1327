@@ -6,15 +6,15 @@ unsigned long long fib_i_core(int fibIndex) {
     if (fibIndex <= 2) {
         return fibIndex - 1;
     }
-    unsigned long long previous_num = 0;
-    unsigned long long current_num = 1;
-    unsigned long long next_num;
+    unsigned long long previous = 0;
+    unsigned long long current = 1;
+    unsigned long long next;
     for (unsigned long long iter = 3; iter <= fibIndex; iter++) {
-        next_num = previous_num + current_num;
-        previous_num = current_num;
-        current_num = next_num;
+        next = previous + current;
+        previous = current;
+        current = next;
     }
-    return current_num;
+    return current;
 }
 unsigned long long fib_r_core(int fibIndex) {
     if (fibIndex <= 2) {
