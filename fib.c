@@ -23,8 +23,9 @@ unsigned long long fib_i_core(int fibIndex) {
     }
     unsigned long long previous = 0;
     unsigned long long current = 1;
-    unsigned long long next;
+    
     for (unsigned long long iter = 3; iter <= fibIndex; iter++) {
+        unsigned long long next;
         if (fibOverflow(previous, current)) {
             fprintf(stderr, "Overflow detected at index %llu\n", iter + 2);
             return -1;
